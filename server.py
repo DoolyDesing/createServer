@@ -1,11 +1,11 @@
-#!flask/bin/python
 from flask import Flask
 
 app = Flask(__name__)
 
 @app.route('/')
-def index():
-    return "Hello, World!"
+def hello():
+    return "Hello World"
 
 if __name__ == '__main__':
-    app.run()
+    # Слушаем на порту 80, чтобы можно было обращаться через http://<IP>
+    app.run(host='0.0.0.0', port=80)
